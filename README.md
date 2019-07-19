@@ -1,12 +1,13 @@
-# LFSRBenchmark
-An code integration and processed data collection for light field super-resolution resources with the benchmark paper [Light Field Super-Resolution: A Benchmark](http://openaccess.thecvf.com/content_CVPRW_2019/html/NTIRE/Cheng_Light_Field_Super-Resolution_A_Benchmark_CVPRW_2019_paper.html) (CVPRW2019).
+# Light Field Super-Resolution: A Benchmark
+A collection of codes and datasets for light field super-resolution adopted in the following paper </br>
+Zhen Cheng, Zhiwei Xiong, Chang Chen, Dong Liu. [Light Field Super-Resolution: A Benchmark](http://openaccess.thecvf.com/content_CVPRW_2019/html/NTIRE/Cheng_Light_Field_Super-Resolution_A_Benchmark_CVPRW_2019_paper.html). In CVPRW 2019. </br>
 
 ## Datasets
+### HCI
+It is a dataset synthesized by graphic software [1]. Our used data is an early version of this dataset, which cannot be found in their website now. We make it available again (THE LINK TO BE ADDED).
 
-We select two datasets that are widely used in light field researches for the benchmark evaluation.
-
-1. The HCI dataset [1], it is a synthetic dataset synthesized by graphic software. Our used data is an early version of their public dataset which can't be found in their website. But you can download this repository for usage with referring to */data*.
-2. The EPFL dataset [2], it is a real-world dataset captured by Lytro Illum camera. Due to the vignetting effect, we make a further rectification after calibration with the [Light Field Toolbox for MATLAB](http://dgd.vision/Tools/LFToolbox/). The rectification can be found in our supplementary document.
+### EPFL
+It is a real-world dataset captured by Lytro Illum camera [2]. Due to the vignetting effect, we make a further rectification after calibration with the [Light Field Toolbox for MATLAB](http://dgd.vision/Tools/LFToolbox/). We make it the rectified dataset available at (THE LINK TO BE ADDED). Detail information about the rectification can be found in our supplementary document.
 
 ## Codes
 
