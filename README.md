@@ -1,5 +1,5 @@
 # Light Field Super-Resolution: A Benchmark
-A collection of codes and datasets for light field super-resolution adopted in the following paper </br>
+A collection of codes and datasets for light field super-resolution methods evaluated in the following paper </br>
 Zhen Cheng, Zhiwei Xiong, Chang Chen, Dong Liu. [Light Field Super-Resolution: A Benchmark](http://openaccess.thecvf.com/content_CVPRW_2019/html/NTIRE/Cheng_Light_Field_Super-Resolution_A_Benchmark_CVPRW_2019_paper.html). In CVPRW 2019. </br>
 
 ## Datasets
