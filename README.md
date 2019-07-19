@@ -1,28 +1,29 @@
-# LFSRBenchmark
-An code integration and processed data collection for light field super-resolution resources with the benchmark paper [Light Field Super-Resolution: A Benchmark](http://openaccess.thecvf.com/content_CVPRW_2019/html/NTIRE/Cheng_Light_Field_Super-Resolution_A_Benchmark_CVPRW_2019_paper.html) (CVPRW2019).
+# Light Field Super-Resolution: A Benchmark
+A collection of codes and datasets for light field super-resolution methods evaluated in the following paper </br>
+Zhen Cheng, Zhiwei Xiong, Chang Chen, Dong Liu. [Light Field Super-Resolution: A Benchmark](http://openaccess.thecvf.com/content_CVPRW_2019/html/NTIRE/Cheng_Light_Field_Super-Resolution_A_Benchmark_CVPRW_2019_paper.html). In CVPRW 2019. </br>
 
 ## Datasets
+### HCI
+It is a dataset synthesized by graphic software [1]. Our used data is an early version of this dataset, which cannot be found in their website now. We make it available again at </br>
+http://pan.bitahub.com/index.php?mod=shares&sid=eTJ2bFFQR3BzTm5FTGc5OHJBWW1zWnc4eHpMYWdaeXE5WVdwSmc
 
-We select two datasets that are widely used in light field researches for the benchmark evaluation.
-
-1. The HCI dataset [1], it is a synthetic dataset synthesized by graphic software. Our used data is an early version of their public dataset which can't be found in their website. But you can download this repository for usage with referring to */data*.
-2. The EPFL dataset [2], it is a real-world dataset captured by Lytro Illum camera. Due to the vignetting effect, we make a further rectification after calibration with the [Light Field Toolbox for MATLAB](http://dgd.vision/Tools/LFToolbox/). The rectification can be found in our supplementary document.
+### EPFL
+It is a real-world dataset captured by Lytro Illum camera [2]. Due to the vignetting effect, we make a further rectification after calibration with the [Light Field Toolbox for MATLAB](http://dgd.vision/Tools/LFToolbox/). Detail information about the rectification can be found in our supplementary document. We make this rectified dataset available at </br>
+http://pan.bitahub.com/index.php?mod=shares&sid=eTJ2bFFQR3BzTm5FTGc5OHJBWW1zWnc4eHpMYWdaeXE5WVdwSmc
 
 ## Codes
 
-We select four representative light field SR methods from three categories described in Related Work. Among them, GB [3] and RR [4] are implemented with the official codes while PRO [5] and LFCNN [6] are implemented by ourselves. Single image super resolution method VDSR [7] is also implemented by ourselves.
+We select four representative light field SR methods from three categories. Among them, GB [3] and RR [4] are implemented with the official codes, while PRO [5], LFCNN [6] and VDSR [7] are re-implemented by ourselves.
 
-If you want to test these algorithms with other datasets, you can just change the data directories to your data directory.
-
-### GB
+## GB
 
 GB is a graph-based framework for light field super-resolution. The official code can be found at [GB-official-code](https://github.com/rossimattia/light-field-super-resolution).
 
-#### Requirements and dependencies
+### Requirements
 
 - MATLAB
 
-#### Run
+### Run
 
 You can simply run the code in the MATLAB command window with the following commands:
 
@@ -31,19 +32,20 @@ cd GB
 graph_based_SR_on_EPFL
 ```
 
-The above script can also be executed with the Run button in MATLAB edit mode. You can increase the parameter *poolSize* in the script graph_based_SR.m to accelerate the running. If your CPU resource is limited, you can decrease the pool size as well.
+### Tips for running
+You can increase the parameter *poolSize* in the script graph_based_SR.m to accelerate the running. If your CPU resource is limited, you can decrease the pool size as well.
 
-For more details about the code, we recommend you to the official code.
+For more details about the code, please refer to the [official website](https://github.com/rossimattia/light-field-super-resolution).
 
-### RR
+## RR
 
 RR is a learning-based light field SR method with Principal Component Analysis (PCA) and Ridge Regression (RR). The official code can be found at [RR-official-code](https://github.com/rrfarr/LF-Editing).
 
-#### Requirements and dependencies
+### Requirements
 
 - MATLAB
 
-#### Run
+### Run
 
 You can simply run the code in the MATLAB command window with the following commands:
 
@@ -52,17 +54,18 @@ cd RR
 pca_rr_bm_for_EPFL
 ```
 
-The above script can also be executed with the Run button in MATLAB edit mode. For more details, we recommend you to the comments inside the codes as well as the README file of the official code repository.
+### Tips for running
+The above script can also be executed with the Run button in MATLAB edit mode. For more details, please refer to the comments inside the codes as well as the README file in the [official website](https://github.com/rrfarr/LF-Editing).
 
-### PRO
+## PRO
 
 PRO is a projection-based light field super-resolution method. The method is originated from [5] and implemented by ourselves.
 
-#### Requirements and dependencies
+### Requirements
 
 - MATLAB
 
-#### Run
+### Run
 
 You can simply run the code in the MATLAB command window with the following commands:
 
@@ -71,47 +74,48 @@ cd PRO
 projection_based_SR_on_EPFL_scale2
 ```
 
-We recommend to run this script on Windows. With Linux OS such as Ubuntu, the script will get stuck due to some unknown configuration problems. The above script is used for scale 2, if you want to upsample the light field with scale 3, you should change the function *sr_projection_scale2* to *sr_projection_scale3*. Note that the input parameters of these two functions are not exactly the same, please pay some attention.
+### Tips for running
+We recommend to run this script on Windows. In Linux OS such as Ubuntu, the script will get stuck due to some unknown configuration problems. The above script is used for scale 2, if you want to upsample the light field with scale 3, you should change the function *sr_projection_scale2* to *sr_projection_scale3*. Note that the input parameters of these two functions are not exactly the same, please pay some attention.
 
 For the details of the implementation, please refer to the code or our supplementary document.
 
-### LFCNN
+## LFCNN
 
-LFCNN is the first CNN-based method which is published in ICCVW2015. The original LFCNN uses SRCNN structure as their backbone model, we upgrade the shallow SRCNN structure to the deep VDSR structure, which promotes LFCNN's performance for a fair comparison with single image VDSR.
+LFCNN is the first CNN-based method which is published in ICCVW2015. The original LFCNN uses SRCNN structure as their backbone model. We upgrade the shallow SRCNN structure to the deep VDSR structure, which promotes LFCNN's performance for a fair comparison with VDSR [7].
 
-#### Requirements and dependencies
+### Requirements and dependencies
 
 - Caffe 1.0
 - CUDA and Cudnn suited for Caffe 1.0
 - MATLAB with pre-compiled matcaffe
 
-#### Train
+### Train
 
-Please use the code under folder *data_generation* for test and training data generation at first. Then please change the directory for snapshots, logs, data path and the executable caffe tool in corresponding files in the directory *training_configs*.
+Please use the code under folder *data_generation* for test and training data generation at first. Then please change the directory for snapshots, logs, data path, and the executable caffe tool in corresponding files in the directory *training_configs*.
 
-#### Test
+### Test
 
 The test code is *LFCNN/test_code/test_LFCNN_to_whole_LF.m*, please change the folder path of matcaffe to your path and run the script in MATLAB command window.
 
-#### Tips
+### Tips for running
 
 Note that we used two relatively small datasets for training and testing, so we used Cross-Validation strategy. With more training data, LFCNN can achieve better performance.
 
-### VDSR
+## VDSR
 
-VDSR is a representative CNN-based single image SR method without using any angular information. We train the network using the same training set as in [7]. The official code is implemented with MatConvNet, we implement it with Caffe 1.0.
+VDSR is a representative CNN-based single image SR method without using any angular information. We train the network using the same training set as in [7]. The official code is implemented with MatConvNet, we re-implement it with Caffe 1.0.
 
-#### Requirements and dependencies
+### Requirements and dependencies
 
 - Caffe 1.0
 - CUDA and Cudnn suited for Caffe 1.0
 - MATLAB with pre-compiled matcaffe
 
-#### Train
+### Train
 
 Please use the code under folder *data_generation* for test and training data generation at first. Then please change the directory for snapshots, logs, data path and the executable caffe tool in corresponding files in the directory *training_configs*.
 
-#### Test
+### Test
 
 The test code is *VDSR/test_code/test_VDSR_whole_LF.m*, please change the folder path of matcaffe to your path and run the script in MATLAB command window.
 
