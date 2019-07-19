@@ -4,10 +4,12 @@ Zhen Cheng, Zhiwei Xiong, Chang Chen, Dong Liu. [Light Field Super-Resolution: A
 
 ## Datasets
 ### HCI
-It is a dataset synthesized by graphic software [1]. Our used data is an early version of this dataset, which cannot be found in their website now. We make it available again (THE LINK TO BE ADDED).
+It is a dataset synthesized by graphic software [1]. Our used data is an early version of this dataset, which cannot be found in their website now. We make it available again at </br>
+http://pan.bitahub.com/index.php?mod=shares&sid=eTJ2bFFQR3BzTm5FTGc5OHJBWW1zWnc4eHpMYWdaeXE5WVdwSmc
 
 ### EPFL
-It is a real-world dataset captured by Lytro Illum camera [2]. Due to the vignetting effect, we make a further rectification after calibration with the [Light Field Toolbox for MATLAB](http://dgd.vision/Tools/LFToolbox/). We make it the rectified dataset available at (THE LINK TO BE ADDED). Detail information about the rectification can be found in our supplementary document.
+It is a real-world dataset captured by Lytro Illum camera [2]. Due to the vignetting effect, we make a further rectification after calibration with the [Light Field Toolbox for MATLAB](http://dgd.vision/Tools/LFToolbox/). Detail information about the rectification can be found in our supplementary document. We make it this rectified dataset available at </br>
+http://pan.bitahub.com/index.php?mod=shares&sid=eTJ2bFFQR3BzTm5FTGc5OHJBWW1zWnc4eHpMYWdaeXE5WVdwSmc
 
 ## Codes
 
