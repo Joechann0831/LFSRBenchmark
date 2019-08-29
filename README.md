@@ -99,7 +99,7 @@ The test code is *LFCNN/test_code/test_LFCNN_to_whole_LF.m*, please change the f
 
 ### Tips for running
 
-Note that we used two relatively small datasets for training and testing, so we used Cross-Validation strategy. With more training data, LFCNN can achieve better performance.
+Note that we used two relatively small datasets for training and testing, so we used Cross-Validation strategy. With more training data, LFCNN can achieve better performance. Note that the given model is trained for testing *scene 1,2 and 3* in EPFL dataset under the assumption of Bicubic downsampling and a scale factor of 2.
 
 ## VDSR
 
@@ -117,7 +117,7 @@ Please use the code under folder *data_generation* for test and training data ge
 
 ### Test
 
-The test code is *VDSR/test_code/test_VDSR_whole_LF.m*, please change the folder path of matcaffe to your path and run the script in MATLAB command window.
+The test code is *VDSR/test_code/test_VDSR_whole_LF.m*, please change the folder path of matcaffe to your path and run the script in MATLAB command window. The given model is trained under the assumption of Bicubic downsampling and a scale factor of 2.
 
 ## Reference
 
