@@ -8,14 +8,14 @@ addpath('/home/joechan/caffe/matlab');
 addpath('../../functions/');
 
 % Iters = 3000:3000:165000;
-Iters = 129000;
+% Iters = 129000;
 
 lf_dim = 9;
-scale = 3;
-% ds_method = 'bicubic';
-ds_method = 'gaussian';
-modes = 'HCIa';
-dataset = 'buddha';
+scale = 2;
+ds_method = 'bicubic';
+% ds_method = 'gaussian';
+modes = 'EPFL1';
+dataset = 'scene1';
 for iter = 1:length(Iters)
     iter_num = Iters(iter);
     disp(num2str(iter_num));
@@ -27,7 +27,7 @@ for iter = 1:length(Iters)
     caffe.set_device(gpu_id);
 
     net_config = '../training_configs/deploy_LFVDSR_net.prototxt';
-    net_weights = ['../Models/_iter_',num2str(iter_num),'.caffemodel'];
+    net_weights = ['../Models/EPFL1_scale2_bicubic.caffemodel'];
     net = caffe.Net(net_config,net_weights,'test');
 
     %% load the light fields and test the network, save the result HR light fields
@@ -35,7 +35,7 @@ for iter = 1:length(Iters)
 %     disp(['scale is ',num2str(scale),', while downsampling method is ',ds_method]);
 %     disp(['Dataset is ',dataset,' with mode ',modes]);
 
-    load(['../../data/HCI/',dataset,'.mat']);
+    load(['../../data/EPFL/',dataset,'.mat']);
 
     % downsample the input light fields and take out Y channel
     seed_view = squeeze(lf_data(1,1,:,:,:));
@@ -106,7 +106,7 @@ for iter = 1:length(Iters)
     disp(['PSNR of central view is ',num2str(cv_PSNR),' while bicubic is ',num2str(bic_PSNR)]);
 end
 
-savedir = ['./Results/scale',num2str(scale),'/',ds_method,'/HCI/'];
+savedir = ['./Results/scale',num2str(scale),'/',ds_method,'/EPFL/'];
 if exist(savedir,'dir') == 0
     mkdir(savedir);
 end
