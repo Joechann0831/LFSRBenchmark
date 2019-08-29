@@ -8,8 +8,8 @@ addpath('/home/joechan/caffe/matlab');
 % datasets = {'buddha','buddha2','coneHead','medieval','monasRoom','papillon','rx_elephant','rx_watch','statue','stillLife'};
 datasets = {'scene1','scene2','scene3','scene4','scene5','scene6','scene7','scene8','scene9','scene10','scene11','scene12'};
 lf_dim = 9;
-scale = 3;
-ds_method = 'gaussian';
+scale = 2;
+ds_method = 'bicubic';
 
 %% set devices and load the network
 
@@ -18,7 +18,7 @@ gpu_id = 0;
 caffe.set_device(gpu_id);
 
 net_config = '../training_config/VDSR_net_deploy.prototxt';
-net_weights = '../Models/_iter_155000.caffemodel';
+net_weights = '../Models/VDSR_bicubic2.caffemodel';
 net = caffe.Net(net_config,net_weights,'test');
 
 %% load the light fields and test the network, save the result HR light fields
